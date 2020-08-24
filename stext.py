@@ -4,7 +4,7 @@ import logging
 import requests
 from textwrap import wrap
 from PIL import Image, ImageDraw, ImageFont
-bytes_font = requests.get("https://github.com/ayebrian/ftg/blob/master/iphone.otf?raw=true").content
+bytes_font = requests.get("https://github.com/ayebrian/ftg/blob/master/light.otf?raw=true").content
 logger = logging.getLogger(__name__)
 
 def register(cb):
