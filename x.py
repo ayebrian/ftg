@@ -1,0 +1,13 @@
+import os
+await reply.download_media("tgs.tgs")
+os.system("lottie_convert.py tgs.tgs json.json")
+json = open("json.json","r")
+jsn = json.read()
+json.close()
+jsn = jsn.replace("[0]", "[30]").replace("[1]", "[30]").replace("[2]", "[30]").replace("[3]", "[30]").replace("[4]", "[30]").replace("[5]", "[30]").replace("[6]", "[30]").replace("[7]", "[30]").replace("[8]", "[30]")
+open("json.json","w").write(jsn)
+os.system("lottie_convert.py json.json tgs.tgs")
+await reply.reply(file="tgs.tgs")
+os.remove("json.json")
+os.remove("tgs.tgs")
+await message.delete()
